@@ -1,7 +1,6 @@
 ﻿@{
     ViewBag.Title = "Consulta General de Trámites";
 }
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <div class="card rounded-3 p-3 mt-3">
     <div class="card-body">
         <div class="row">
@@ -32,7 +31,7 @@
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="mb-2">
                     <label for="txtExp" class="text-success">Número de expediente*</label>
-                    <input type="text" class="form-control" onkeypress="return SoloNumeros(event)" name="txtExpediente" id="txtExpediente" placeholder="Escribe algo" />
+                    <input type="text" class="form-control" onkeypress="return SoloNumeros(event)" name="txtExpediente" id="txtExpediente" placeholder="Escribe n° expediente" />
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3">
@@ -50,175 +49,9 @@
                 </div>
             </div>
         </div>
-        <div class="desplegar" id="filters">
-            <div class="row mt-2">
-                <div class="col-12 col-md-3">
-                    <label class="fw-bold">Municipios</label>
-                </div>
-                <div class="col-md-3 offset-md-3">
-                    <label class="fw-bold">Estados</label>
-                </div>
-                <div class="col-12 col-md-3">
-                    <label class="fw-bold">Categorías</label>
-                </div>
-                <div class="col-6 col-md-3">
-                    <!-- Filtros checksbox municipios-->
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Todos
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Antiguo Cuscatlán
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Santa Tecla
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Apopa
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Ayutuxtepeque
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Cuscatancingo
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Delgado
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Ilopango
-                        </label>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <!-- Filtros checksbox  municipios-->
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Mejicanos
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Nejapa
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            San Marcos
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            San Martin
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Tonacatepeque
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            San Salvador
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Soyapango
-                        </label>
-                    </div>
-                </div>
-                @*<div class="col-12">
-                        <label>Estado</label>
-                    </div>*@
-                <div class="col-6 col-md-3">
-                    <!-- Filtros checksbox Estados-->
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Favorable
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
-                            En trámite
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Memo
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Denegado
-                        </label>
-                    </div>
-                </div>
-                @*<div class="col-12">
-                        <label>Categorías</label>
-                    </div>*@
-                <div class="col-6 col-md-3">
-                    <!-- Filtros checksbox Categorías-->
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Todas
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Categoría 1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Categoría 2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Categoría 3
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Here comes the filters from partial view Filters on shared folder-->
+
+        <!-- Datatable -->
         <div class="row mt-4">
             <div class="col-12">
                 <div class="table-responsive" id="divTabla">
@@ -254,37 +87,52 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <!-- Modal Detalles-->
-                <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+                <!-- Modal Detalle Expediente-->
+                <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="">Detalle Expediente <b id="numExpediente"></b></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body"> <!-- Cards de estado del trámite -->
                                 <div class="row d-flex justify-content-center mx-md-5">
                                     <div class="col-12 col-sm-12 col-md-4">
-                                        <div class="card tarjetas green-card m-1">
+                                        <div class="card tarjetas m-1" data-card id="asignacion-card">
                                             <div class="card-body">
-                                                <h4 class="text-center">Asignación</h4>
-                                                <img src="~/Content/img/icons/assignment_FILL0_wght400_GRAD0_opsz48-GREEN.svg" alt="Asignacion" width="100" class="img-fluid mx-auto d-block material-symbols-outlined" />
+                                                <div class="flip-card-front text-center" id="frontAsignacion">
+                                                    <h4 class="text-center">Asignación</h4>
+                                                    <i class="fa fa-list-alt fa-xl" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="flip-card-back text-center" id="backAsignacion">
+                                                    <span class="" id="textAsignacion"></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-4">
-                                        <div class="card tarjetas blue-card m-1">
+                                        <div class="card tarjetas m-1" data-card id="analisis-card">
                                             <div class="card-body">
-                                                <h4 class="text-center">Análisis</h4>
-                                                <img src="~/Content/img/icons/analytics_FILL0_wght400_GRAD0_opsz48-BLUE.svg" alt="Analisis" width="100" class="img-fluid mx-auto d-block material-symbols-outlined" />
+                                                <div class="flip-card-front text-center" id="frontAnalisis">
+                                                    <h4 class="text-center">Análisis</h4>
+                                                    <i class="fa fa-bar-chart fa-xl" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="flip-card-back text-center" id="backAnalisis">
+                                                    <span class="" id="textAnalisis"></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-4">
-                                        <div class="card tarjetas grey-card m-1">
+                                        <div class="card tarjetas m-1" data-card id="respuesta-card">
                                             <div class="card-body">
-                                                <h4 class="text-center">Respuesta Ventanilla</h4>
-                                                <img src="~/Content/img/icons/task_alt_FILL0_wght400_GRAD0_opsz48-GREY.svg" alt="Respuesta" width="100" class="img-fluid mx-auto d-block material-symbols-outlined" />
+                                                <div class="flip-card-front text-center" id="frontRespuesta">
+                                                    <h4 class="text-center">Respuesta Ventanilla</h4>
+                                                    <i class="fa fa-check-square-o fa-xl" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="flip-card-back text-center" id="backRespuesta">
+                                                    <span class="" id="textRespuesta"></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -302,7 +150,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-lg-6">
-                                        <div class="table-responsive">
+                                        <div class="table-responsive"> <!-- Detalle del expediente -->
                                             <table class="table table-sm table-striped">
                                                 <tbody>
                                                     <tr>
@@ -322,8 +170,12 @@
                                                         <td><span id="estado"></span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Categoría</td>
+                                                        <td>Número de Ingreso</td>
                                                         <td><span id="numIngr"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="catdt"></td>
+                                                        <td><span id="cat"></span></td>
                                                     </tr>
                                                     <tr>
                                                         <td>No. de Ingreso</td>
@@ -338,7 +190,7 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-12 col-sm-12 col-lg-3">
+                                    <div class="col-12 col-sm-12 col-lg-3"> <!-- Tacómetros de dias transcurridos y restantes -->
                                         <div class="text-center">
                                             <canvas id="gaugeTranscurrido"></canvas>
                                         </div>
@@ -351,8 +203,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary text-capitalize" data-bs-dismiss="modal">Close</button>
-                                @*<button type="button" class="btn btnOpamss text-capitalize">Understood</button>*@
+                                <button type="button" class="btn btn-secondary text-capitalize" data-bs-dismiss="modal">Cerrar</button>
+                                @*<button type="button" class="btn btnOpamss text-capitalize">Aceptar</button>*@
                             </div>
                         </div>
                     </div>
