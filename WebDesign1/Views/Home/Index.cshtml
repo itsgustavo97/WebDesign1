@@ -1,0 +1,365 @@
+﻿@{
+    ViewBag.Title = "Consulta General de Trámites";
+}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<div class="card rounded-3 p-3 mt-3">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center textOpamss mt-2 mb-4">Consulta General de Trámites</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="mb-2">
+                    <label for="txtAnio" class="text-success">Año*</label>
+                    <select class="form-select" name="txtAnio" id="txtAnio">
+                        @for (int i = 2020; i <= DateTime.Now.Year; i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="mb-2">
+                    <label for="txtTipoTramite" class="text-success">Tipo de trámite*</label>
+                    <select class="form-select" name="txtTipoTramite" id="txtTipoTramite">
+                        <option selected>Selecciona tipo de trámite</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="mb-2">
+                    <label for="txtExp" class="text-success">Número de expediente*</label>
+                    <input type="text" class="form-control" onkeypress="return SoloNumeros(event)" name="txtExpediente" id="txtExpediente" placeholder="Escribe algo" />
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="d-grid gap-2 mt-2 mt-sm-4 mt-md-4">
+                    @*<input type="button" class="btn btnOpamss" name="btn" id="btn" value="Consultar" />*@
+                    <button class="btn btnOpamss text-capitalize" onclick="ObtenerTramites()" name="btn" id="btn"><i class="fa fa-search" aria-hidden="true"></i> Consultar</button>
+                </div>
+            </div>
+        </div>
+        <div class="row" hidden> <!-- Oculto hasta que se modifique la api para hacer esta consulta con checkbox-->
+            <div class="col-12 col-md-3">
+                <div class="d-grid gap-2 mt-2 mt-md-4">
+                    @*<input type="button" class="btn btnOpamss" name="btn" id="btn" value="Consultar" />*@
+                    <a class="btn btnOpamss text-capitalize" onclick="hideFilters('filters')" name="btn" id="btnFilter"><i class="fa fa-filter" aria-hidden="true"></i> Filtros</a>
+                </div>
+            </div>
+        </div>
+        <div class="desplegar" id="filters">
+            <div class="row mt-2">
+                <div class="col-12 col-md-3">
+                    <label class="fw-bold">Municipios</label>
+                </div>
+                <div class="col-md-3 offset-md-3">
+                    <label class="fw-bold">Estados</label>
+                </div>
+                <div class="col-12 col-md-3">
+                    <label class="fw-bold">Categorías</label>
+                </div>
+                <div class="col-6 col-md-3">
+                    <!-- Filtros checksbox municipios-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Todos
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Antiguo Cuscatlán
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Santa Tecla
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Apopa
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Ayutuxtepeque
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Cuscatancingo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Delgado
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Ilopango
+                        </label>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <!-- Filtros checksbox  municipios-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Mejicanos
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Nejapa
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            San Marcos
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            San Martin
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Tonacatepeque
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            San Salvador
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Soyapango
+                        </label>
+                    </div>
+                </div>
+                @*<div class="col-12">
+                        <label>Estado</label>
+                    </div>*@
+                <div class="col-6 col-md-3">
+                    <!-- Filtros checksbox Estados-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Favorable
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            En trámite
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Memo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Denegado
+                        </label>
+                    </div>
+                </div>
+                @*<div class="col-12">
+                        <label>Categorías</label>
+                    </div>*@
+                <div class="col-6 col-md-3">
+                    <!-- Filtros checksbox Categorías-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Todas
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Categoría 1
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Categoría 2
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Categoría 3
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="table-responsive" id="divTabla">
+                    <table class="table table-sm table-hover table-striped animated fadeInRight" id="dtExpedientes">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Expediente
+                                </th>
+                                <th>
+                                    Estado del Trámite
+                                </th>
+                                <th>
+                                    Proyecto
+                                </th>
+                                <th>
+                                    Municipio
+                                </th>
+                                <th>
+                                    Tiempo Respuesta (Días hábiles)
+                                </th>
+                                <th>
+                                    Acciones
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Se genera en javascript jquery.consulta.js-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Modal Detalles-->
+                <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="">Detalle Expediente <b id="numExpediente"></b></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row d-flex justify-content-center mx-md-5">
+                                    <div class="col-12 col-sm-12 col-md-4">
+                                        <div class="card tarjetas green-card m-1">
+                                            <div class="card-body">
+                                                <h4 class="text-center">Asignación</h4>
+                                                <img src="~/Content/img/icons/assignment_FILL0_wght400_GRAD0_opsz48-GREEN.svg" alt="Asignacion" width="100" class="img-fluid mx-auto d-block material-symbols-outlined" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-4">
+                                        <div class="card tarjetas blue-card m-1">
+                                            <div class="card-body">
+                                                <h4 class="text-center">Análisis</h4>
+                                                <img src="~/Content/img/icons/analytics_FILL0_wght400_GRAD0_opsz48-BLUE.svg" alt="Analisis" width="100" class="img-fluid mx-auto d-block material-symbols-outlined" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-4">
+                                        <div class="card tarjetas grey-card m-1">
+                                            <div class="card-body">
+                                                <h4 class="text-center">Respuesta Ventanilla</h4>
+                                                <img src="~/Content/img/icons/task_alt_FILL0_wght400_GRAD0_opsz48-GREY.svg" alt="Respuesta" width="100" class="img-fluid mx-auto d-block material-symbols-outlined" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="text-center">
+                                            <div class="btn-group btn-group-sm my-3" role="group" aria-label="Basic example">
+                                                <button type="button" class="btn btnGrey">No Iniciada</button>
+                                                <button type="button" class="btn btnBlue">En Proceso</button>
+                                                <button type="button" class="btn btnGreen">Finalizada</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-lg-6">
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>No. Expediente</td>
+                                                        <td><span id="numExp"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Proyecto</td>
+                                                        <td><span id="nomProy"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fecha Ingreso</td>
+                                                        <td><span id="dateIngre"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tipo de Resolución</td>
+                                                        <td><span id="estado"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Categoría</td>
+                                                        <td><span id="numIngr"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>No. de Ingreso</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Días Transcurrido</td>
+                                                        <td><span id="DiaTran"></span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-lg-3">
+                                        <div class="text-center">
+                                            <canvas id="gaugeTranscurrido"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-lg-3">
+                                        <div class="text-center">
+                                            <canvas id="gaugeRestante"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary text-capitalize" data-bs-dismiss="modal">Close</button>
+                                @*<button type="button" class="btn btnOpamss text-capitalize">Understood</button>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery.consulta.js?v=@Guid.NewGuid().ToString()"></script>
+<script src="~/Scripts/jquery.consultaModal.js"></script>
