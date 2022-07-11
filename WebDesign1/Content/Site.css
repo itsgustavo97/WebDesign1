@@ -2,7 +2,7 @@
     
 }
 
-/* Set padding to keep content from hitting the edges */
+/* Set padding to keep content from hitting the edges, only on {container-fluid} */
 .body-content {
     padding-left: 9%;
     padding-right: 9%;
@@ -26,7 +26,7 @@ select,
 textarea {
     max-width: 280px;
 }
-
+ /*background-color dark blue*/
 .bgOpamss {
     background-color: #0071B2;
 }
@@ -94,6 +94,25 @@ textarea {
     color: #fff;
 }
 
-/*.material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 200;
-}*/
+
+/* Estilo de cards de estado de expediente */
+.tarjetas .flip-card-back {
+    display: none;
+}
+.tarjetas:hover .card-body {
+    transform: rotateY(180deg);
+}
+.tarjetas:hover .flip-card-front {
+    display: none;
+}
+.tarjetas:hover .flip-card-back {
+    display: block;
+    width: auto;
+    height: 8.3rem;
+    transform: rotateY(180deg);
+}
+
+/*Icon size responsive*/
+.fa-xl {
+    font-size: 6rem;
+}
