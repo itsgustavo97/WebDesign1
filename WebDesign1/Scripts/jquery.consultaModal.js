@@ -160,8 +160,8 @@ function GenerarGaugeCanvas(idcanva, minVal, maxVal, halfVal, setVal, MessageTex
 
     let gauge = new RadialGauge({
         renderTo: idcanva,
-        width: 200,
-        height: 200,
+        width: 170,
+        height: 170,
         units: MessageText,
         valueDec: 0,
         valueInt: 2,

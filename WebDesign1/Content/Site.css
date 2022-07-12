@@ -108,11 +108,13 @@ textarea {
 .tarjetas:hover .flip-card-back {
     display: block;
     width: auto;
-    height: 8.3rem;
+    height: 7rem;
     transform: rotateY(180deg);
 }
 
 /*Icon size responsive*/
 .fa-xl {
-    font-size: 6rem;
+    font-size: 5rem;
 }
+
+/*canvas resolution*/
