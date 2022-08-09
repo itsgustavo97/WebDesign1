@@ -1,7 +1,7 @@
 ﻿let detailReques = [];
 ////////////////////////////// DETAILS EXPEDIENTE MODAL
 function GetDetailData(NoExp) {
-
+    $('#trcat').attr("hidden", true);
     //Modelo para request de data
     const datos = {
         anio: $("#txtAnio").val(),
@@ -47,6 +47,7 @@ function GetDetailData(NoExp) {
         if (datos.tabla == "pc" || datos.tabla == "cl") {
             $('#catdt').html(' <i data-toggle="tooltip" title="" id="catInfo" class="fa fa-info-circle" style="color:#0095E8;font-size:20px" aria-hidden="true"></i> <label>Categoria:</label> ');
             $('#catInfo').attr("title", descripcionCategoria);
+            $('#trcat').attr("hidden", false);
             $('#cat').text(categoria);
         }
 
@@ -178,7 +179,7 @@ function GenerarGaugeCanvas(idcanva, minVal, maxVal, halfVal, setVal, MessageTex
         minorTicks: 4,
         strokeTicks: true,
         highlights: [
-            { "from": halfVal, "to": maxVal, "color": "#007bff" }
+            { "from": halfVal, "to": maxVal, "color": "#e0e6eb" }
         ],
         colorPlate: "#fff",
         borderShadowWidth: 0,

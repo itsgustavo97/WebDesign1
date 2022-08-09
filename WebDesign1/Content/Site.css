@@ -65,8 +65,8 @@ textarea {
     color: #575757;
 }
 .blue-card {
-    border-color: #006097;
-    color: #006097;
+    border-color: #e6b800;
+    color: #e6b800;
 }
 
 .green-card:hover {
@@ -78,11 +78,11 @@ textarea {
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
 }
 .blue-card:hover {
-    border-color: #0071B2;
+    border-color: #ffd633;
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
 }
 .btnBlue {
-    background-color: #006097;
+    background-color: #e6b800;
     color: #fff;
 }
 .btnGrey {

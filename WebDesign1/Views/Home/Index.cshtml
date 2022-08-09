@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center textOpamss mt-2 mb-4">Consulta General de Trámites</h2>
+                <h2 class="text-center textOpamss mt-2 mb-4">Consulta general de trámites</h2>
             </div>
         </div>
         <div class="row">
@@ -31,7 +31,7 @@
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="mb-2">
                     <label for="txtExp" class="text-success">Número de expediente*</label>
-                    <input type="text" class="form-control" onkeypress="return SoloNumeros(event)" name="txtExpediente" id="txtExpediente" placeholder="Escribe n° expediente" />
+                    <input type="text" class="form-control" onkeypress="return SoloNumeros(event)" name="txtExpediente" id="txtExpediente" placeholder="ESCRIBE N° DE EXPEDIENTE" />
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3">
@@ -62,7 +62,7 @@
                                     Expediente
                                 </th>
                                 <th>
-                                    Estado del Trámite
+                                    Estado del trámite
                                 </th>
                                 <th>
                                     Proyecto
@@ -71,7 +71,7 @@
                                     Municipio
                                 </th>
                                 <th>
-                                    Tiempo Respuesta (Días hábiles)
+                                    Tiempo respuesta (Días hábiles)
                                 </th>
                                 <th>
                                     Acciones
@@ -92,7 +92,7 @@
                     <div class="modal-dialog modal-dialog-centered modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="">Detalle Expediente <b id="numExpediente"></b></h5>
+                                <h5 class="modal-title" id="">Detalle expediente <b id="numExpediente"></b></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body"> <!-- Cards de estado del trámite -->
@@ -127,7 +127,7 @@
                                         <div class="card tarjetas mt-sm-2 my-1 m-lg-1 h-100" data-card id="respuesta-card">
                                             <div class="card-body">
                                                 <div class="flip-card-front text-center" id="frontRespuesta">
-                                                    <h4 class="text-center fs-5">Respuesta Ventanilla</h4>
+                                                    <h4 class="text-center fs-5">Respuesta ventanilla</h4>
                                                     <i class="fa fa-check-square-o fa-xl" aria-hidden="true"></i>
                                                 </div>
                                                 <div class="flip-card-back text-center" id="backRespuesta">
@@ -154,7 +154,7 @@
                                             <table class="table table-sm table-striped">
                                                 <tbody>
                                                     <tr>
-                                                        <td>No. Expediente</td>
+                                                        <td>No. expediente</td>
                                                         <td><span id="numExp"></span></td>
                                                     </tr>
                                                     <tr>
@@ -162,27 +162,23 @@
                                                         <td><span id="nomProy"></span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Fecha Ingreso</td>
+                                                        <td>Fecha ingreso</td>
                                                         <td><span id="dateIngre"></span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Tipo de Resolución</td>
+                                                        <td>Tipo de resolución</td>
                                                         <td><span id="estado"></span></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>Número de Ingreso</td>
-                                                        <td><span id="numIngr"></span></td>
-                                                    </tr>
-                                                    <tr>
+                                                    <tr id="trcat" hidden>
                                                         <td id="catdt"></td>
                                                         <td><span id="cat"></span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>No. de Ingreso</td>
-                                                        <td>1</td>
+                                                        <td>Número de ingreso</td>
+                                                        <td><span id="numIngr"></span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Días Transcurrido</td>
+                                                        <td>Días transcurrido</td>
                                                         <td><span id="DiaTran"></span></td>
                                                     </tr>
                                                 </tbody>
