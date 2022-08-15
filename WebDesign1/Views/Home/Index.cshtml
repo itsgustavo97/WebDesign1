@@ -41,16 +41,15 @@
                 </div>
             </div>
         </div>
-        <div class="row" hidden> <!-- Oculto hasta que se modifique la api para hacer esta consulta con checkbox-->
+        @*<div class="row" hidden> <!-- Oculto hasta que se modifique la api para hacer esta consulta con checkbox-->
             <div class="col-12 col-md-3">
                 <div class="d-grid gap-2 mt-2 mt-md-4">
-                    @*<input type="button" class="btn btnOpamss" name="btn" id="btn" value="Consultar" />*@
+                    <input type="button" class="btn btnOpamss" name="btn" id="btn" value="Consultar" />
                     <a class="btn btnOpamss text-capitalize" onclick="hideFilters('filters')" name="btn" id="btnFilter"><i class="fa fa-filter" aria-hidden="true"></i> Filtros</a>
                 </div>
             </div>
-        </div>
+        </div>*@
         <!-- Here comes the filters from partial view Filters on shared folder-->
-
         <!-- Datatable -->
         <div class="row mt-4">
             <div class="col-12">
@@ -95,7 +94,8 @@
                                 <h5 class="modal-title" id="">Detalle expediente <b id="numExpediente"></b></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body"> <!-- Cards de estado del trámite -->
+                            <div class="modal-body">
+                                <!-- Cards de estado del trámite -->
                                 <div class="row d-flex justify-content-center mx-md-1 mx-xl-5">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-4">
                                         <div class="card tarjetas mb-sm-2 m-lg-1 h-100" data-card id="asignacion-card">
@@ -150,7 +150,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-lg-6">
-                                        <div class="table-responsive"> <!-- Detalle del expediente -->
+                                        <div class="table-responsive">
+                                            <!-- Detalle del expediente -->
                                             <table class="table table-sm table-striped">
                                                 <tbody>
                                                     <tr>
@@ -186,7 +187,8 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-12 col-sm-12 col-lg-3"> <!-- Tacómetros de dias transcurridos y restantes -->
+                                    <div class="col-12 col-sm-12 col-lg-3">
+                                        <!-- Tacómetros de dias transcurridos y restantes -->
                                         <div class="text-center">
                                             <canvas id="gaugeTranscurrido"></canvas>
                                         </div>
